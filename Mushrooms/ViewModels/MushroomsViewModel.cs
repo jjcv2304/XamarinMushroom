@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Mushrooms.Models;
+using Mushrooms.Views;
 using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels

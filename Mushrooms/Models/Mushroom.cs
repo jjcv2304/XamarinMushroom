@@ -18,14 +18,14 @@ namespace Mushrooms.Models
             RingType = ringType;
         }
 
-        internal Guid Id { get; private set; }
-        internal string CommonName { get; private set; }
-        internal string ScientificName { get; private set; }
-        internal Cap Cap { get; private set; }
-        internal MarginType MarginType { get; private set; }
-        internal MarginCurvature MarginCurvature { get; private set; }
-        internal GillAttachment GillAttachment { get; private set; }
-        internal StemShape StemShape { get; private set; }
-        internal RingType RingType { get; private set; }
+        public Guid Id { get; private set; }
+        public string CommonName { get; private set; }
+        public string ScientificName { get; private set; }
+        public Cap Cap { get; private set; }
+        public MarginType MarginType { get; private set; }
+        public MarginCurvature MarginCurvature { get; private set; }
+        public GillAttachment GillAttachment { get; private set; }
+        public StemShape StemShape { get; private set; }
+        public RingType RingType { get; private set; }
     }
 }
