@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum GillAttachment
+    public enum GillAttachment
     {
         Free,
         Adnate,

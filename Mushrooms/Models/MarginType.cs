@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum MarginType
+    public enum MarginType
     {
         Entire,
         Striate,

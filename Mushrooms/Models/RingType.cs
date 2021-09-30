@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum RingType
+    public enum RingType
     {
         Pendant,
         Flaring,

@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum MarginCurvature
+    public enum MarginCurvature
     {
         Recurved,
         Incurved,

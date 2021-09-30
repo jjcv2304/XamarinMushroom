@@ -79,7 +79,7 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
     <FlyoutItem Title="Browse" Icon="icon_feed.png" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Route="ItemsPage1" ContentTemplate="{DataTemplate local:ItemsPage}" Title="FIND"/>
+        <ShellContent Route="MushroomsPage1" ContentTemplate="{DataTemplate local:MushroomsPage}" Title="FIND"/>
         <ShellContent Route="AboutPage1" ContentTemplate="{DataTemplate local:AboutPage}" Title="ADD"/>
     </FlyoutItem>
     <FlyoutItem Title="About" Icon="icon_about.png">

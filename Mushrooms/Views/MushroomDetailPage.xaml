@@ -10,5 +10,8 @@
         <Label Text="{Binding CommonName}" FontSize="Small"/>
         <Label Text="Scientific Name:" FontSize="Medium" />
         <Label Text="{Binding ScientificName}" FontSize="Small"/>
+        
+        <Label Text="Scientific Name:" FontSize="Medium" />
+        <Label Text="{Binding }" FontSize="Small"/>
     </StackLayout>
 </ContentPage>

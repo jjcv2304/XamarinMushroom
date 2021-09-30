@@ -11,7 +11,7 @@ namespace Mushrooms
     public AppShell()
     {
       InitializeComponent();
-      Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+      Routing.RegisterRoute(nameof(MushroomDetailPage), typeof(MushroomDetailPage));
       Routing.RegisterRoute(nameof(NewMushroomPage), typeof(NewMushroomPage));
     }
 

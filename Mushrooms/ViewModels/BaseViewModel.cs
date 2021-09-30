@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-  internal class BaseViewModel<T> : INotifyPropertyChanged
+  public class BaseViewModel<T> : INotifyPropertyChanged
   {
     internal IDataStore<T> DataStore => DependencyService.Get<IDataStore<T>>();
 

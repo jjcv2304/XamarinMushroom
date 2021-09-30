@@ -6,25 +6,8 @@ using Xamarin.Forms;
 namespace Mushrooms.ViewModels
 {
     [QueryProperty(nameof(MushroomId), nameof(MushroomId))]
-    internal class MushroomDetailViewModel : BaseViewModel<Item>
+    public class MushroomDetailViewModel : BaseViewModel<Mushroom>
     {
-        private string mushroomId;
-        private string commonName;
-        private string scientificName;
-        public string Id { get; set; }
-
-        public string CommonName
-        {
-            get => commonName;
-            set => SetProperty(ref commonName, value);
-        }
-
-        public string ScientificName
-        {
-            get => scientificName;
-            set => SetProperty(ref scientificName, value);
-        }
-
         public string MushroomId
         {
             get { return mushroomId; }
@@ -34,15 +17,38 @@ namespace Mushrooms.ViewModels
                 LoadMushroomId(value);
             }
         }
+        
+        private string mushroomId;
+        private string commonName;
+        private string scientificName;
+        private int capId;
+        
+        public string Id { get; set; }
+        public string CommonName
+        {
+            get => commonName;
+            set => SetProperty(ref commonName, value);
+        }
+        public string ScientificName
+        {
+            get => scientificName;
+            set => SetProperty(ref scientificName, value);
+        }
+        public string Cap
+        {
+            get { return "cap test"; }
+            set => SetProperty(ref capId, Int32.Parse(value));
+        }
 
-        public async void LoadMushroomId(string itemId)
+        public async void LoadMushroomId(string mushroomId)
         {
             try
             {
-                var item = await DataStore.GetAsync(itemId);
-                Id = item.Id;
-                CommonName = item.Text;
-                ScientificName = item.Description;
+                var mushroom = await DataStore.GetAsync(mushroomId);
+                Id = mushroom.Id.ToString();
+                CommonName = mushroom.CommonName;
+                ScientificName = mushroom.ScientificName;
+                Cap = mushroom.Cap.ToString();
             }
             catch (Exception)
             {
@@ -51,9 +57,7 @@ namespace Mushrooms.ViewModels
         }
         
         //todo to add the rest of the properties
-        // Id = id;
-        // CommonName = commonName;
-        // ScientificName = scientificName;
+
         // Cap = cap;
         // MarginType = marginType;
         // MarginCurvature = marginCurvature;

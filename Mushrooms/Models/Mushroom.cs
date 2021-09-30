@@ -2,7 +2,7 @@
 
 namespace Mushrooms.Models
 {
-    internal class Mushroom
+    public class Mushroom
     {
         public Mushroom(Guid id, string commonName, string scientificName, Cap cap, MarginType marginType,
             MarginCurvature marginCurvature, GillAttachment gillAttachment, StemShape stemShape, RingType ringType)

@@ -13,7 +13,7 @@ namespace Mushrooms
     {
       InitializeComponent();
 
-      DependencyService.Register<MockDataStore>();
+      DependencyService.Register<MockMushroomDataStore>();
       MainPage = new AppShell();
     }
 

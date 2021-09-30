@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum Cap
+    public enum Cap
     {
         Convex,
         Hemispherical,

@@ -1,6 +1,6 @@
 ﻿namespace Mushrooms.Models
 {
-    internal enum StemShape
+    public enum StemShape
     {
         Equal,
         Clavate,
