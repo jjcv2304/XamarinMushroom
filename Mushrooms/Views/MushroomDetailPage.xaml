@@ -4,14 +4,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mushrooms.Views.MushroomDetailPage"
              Title="{Binding Title}">
-    
+
+  <ScrollView>
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Common Name:" FontSize="Medium" />
-        <Label Text="{Binding CommonName}" FontSize="Small"/>
-        <Label Text="Scientific Name:" FontSize="Medium" />
-        <Label Text="{Binding ScientificName}" FontSize="Small"/>
-        
-        <Label Text="Scientific Name:" FontSize="Medium" />
-        <Label Text="{Binding }" FontSize="Small"/>
+      <Label Text="Common Name:" FontSize="Medium" />
+      <Label Text="{Binding CommonName}" FontSize="Small"/>
+      <Label Text="Scientific Name:" FontSize="Medium" />
+      <Label Text="{Binding ScientificName}" FontSize="Small"/>
+      <Label Text="Cap:" FontSize="Medium" />
+      <Label Text="{Binding Cap}" FontSize="Small"/>
+      <Label Text="MarginType:" FontSize="Medium" />
+      <Label Text="{Binding MarginType}" FontSize="Small"/>
+      <Label Text="MarginCurvature:" FontSize="Medium" />
+      <Label Text="{Binding MarginCurvature}" FontSize="Small"/>
+      <Label Text="GillAttachment:" FontSize="Medium" />
+      <Label Text="{Binding GillAttachment}" FontSize="Small"/>
+      <Label Text="StemShape:" FontSize="Medium" />
+      <Label Text="{Binding StemShape}" FontSize="Small"/>
+      <Label Text="RingType:" FontSize="Medium" />
+      <Label Text="{Binding RingType}" FontSize="Small"/>
+
     </StackLayout>
+  </ScrollView>
 </ContentPage>

@@ -86,7 +86,7 @@ namespace Mushrooms.ViewModels
         }
         private async void OnSave()
         {
-            Mushroom newMushroom = new Mushroom(Guid.NewGuid(), CommonName, _scientificName, _cap, _marginType,
+            Mushroom newMushroom = new Mushroom(5, CommonName, _scientificName, _cap, _marginType,
                 _marginCurvature, _gillAttachment, _stemShape, _ringType
             );
 
