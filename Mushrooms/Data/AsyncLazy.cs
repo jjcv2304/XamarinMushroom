@@ -6,26 +6,26 @@ namespace Mushrooms.Data
 {
   public class AsyncLazy<T>
   {
-    readonly Lazy<Task<T>> instance;
+    readonly Lazy<Task<T>> _instance;
 
     public AsyncLazy(Func<T> factory)
     {
-      instance = new Lazy<Task<T>>(() => Task.Run(factory));
+      _instance = new Lazy<Task<T>>(() => Task.Run(factory));
     }
 
     public AsyncLazy(Func<Task<T>> factory)
     {
-      instance = new Lazy<Task<T>>(() => Task.Run(factory));
+      _instance = new Lazy<Task<T>>(() => Task.Run(factory));
     }
 
     public TaskAwaiter<T> GetAwaiter()
     {
-      return instance.Value.GetAwaiter();
+      return _instance.Value.GetAwaiter();
     }
 
     public void Start()
     {
-      var unused = instance.Value;
+      var unused = _instance.Value;
     }
   }
 }

@@ -1,10 +1,11 @@
 ﻿namespace Mushrooms.Models
 {
-    public enum StemShape
-    {
-        Equal,
-        Clavate,
-        Bulbous,
-        Ventricose
-    }
+  public enum StemShape
+  {
+    Other,
+    Equal,
+    Clavate,
+    Bulbous,
+    Ventricose
+  }
 }

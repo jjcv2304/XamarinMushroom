@@ -25,14 +25,14 @@ namespace Mushrooms.Models
     }
 
     [PrimaryKey, AutoIncrement]
-    public int Id { get; private set; }
-    public string CommonName { get; private set; }
-    public string ScientificName { get; private set; }
-    public Cap Cap { get; private set; }
-    public MarginType MarginType { get; private set; }
-    public MarginCurvature MarginCurvature { get; private set; }
-    public GillAttachment GillAttachment { get; private set; }
-    public StemShape StemShape { get; private set; }
-    public RingType RingType { get; private set; }
+    public int Id { get; set; }
+    public string CommonName { get;  set; }
+    public string ScientificName { get; set; }
+    public Cap Cap { get; set; }
+    public MarginType MarginType { get; set; }
+    public MarginCurvature MarginCurvature { get; set; }
+    public GillAttachment GillAttachment { get; set; }
+    public StemShape StemShape { get; set; }
+    public RingType RingType { get; set; }
   }
 }

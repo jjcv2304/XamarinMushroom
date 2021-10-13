@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Mushrooms.Data;
 using Mushrooms.Models;
 using Xamarin.Forms;
 
@@ -70,11 +71,13 @@ namespace Mushrooms.ViewModels
       set => SetProperty(ref ringType, value);
     }
 
-    public async void LoadMushroomId(string mushroomId)
+    public async void LoadMushroomId(string mushroomIdentifier)
     {
       try
       {
-        var mushroom = await DataStore.GetAsync(mushroomId);
+        MushroomsDatabase database = await MushroomsDatabase.Instance;
+        var mushroom = await database.GetMushroomAsync(int.Parse(mushroomIdentifier));
+        //var mushroom = await DataStore.GetAsync(mushroomId);
         Id = mushroom.Id.ToString();
         CommonName = mushroom.CommonName;
         ScientificName = mushroom.ScientificName;

@@ -1,10 +1,11 @@
 ﻿namespace Mushrooms.Models
 {
-    public enum RingType
-    {
-        Pendant,
-        Flaring,
-        Sheathing,
-        Double
-    }
+  public enum RingType
+  {
+    Other,
+    Pendant,
+    Flaring,
+    Sheathing,
+    Double
+  }
 }

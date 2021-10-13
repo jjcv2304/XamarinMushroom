@@ -14,7 +14,7 @@ namespace Mushrooms.Services
         {
             mushrooms = new List<Mushroom>()
             {
-                new Mushroom(2, "Common Name 1", "Scientific Name 1", Cap.Conical, MarginType.Appendiculate, MarginCurvature.Incurved, GillAttachment.Adnate, StemShape.Ventricose, RingType.Double),
+                new Mushroom(1, "Common Name 1", "Scientific Name 1", Cap.Conical, MarginType.Appendiculate, MarginCurvature.Incurved, GillAttachment.Adnate, StemShape.Ventricose, RingType.Double),
                 new Mushroom(2, "Common Name 2", "Scientific Name 2", Cap.BellShaped, MarginType.Scalloped, MarginCurvature.Straight, GillAttachment.Decurrent, StemShape.Bulbous, RingType.Flaring),
                 new Mushroom(3, "Common Name 3", "Scientific Name 3", Cap.Flat, MarginType.Cracked, MarginCurvature.Recurved, GillAttachment.Adnate, StemShape.Clavate, RingType.Sheathing),
             };

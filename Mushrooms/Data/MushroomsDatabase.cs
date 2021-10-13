@@ -9,51 +9,50 @@ namespace Mushrooms.Data
 {
   public class MushroomsDatabase
   {
-    static SQLiteAsyncConnection Database;
+    private static SQLiteAsyncConnection _database = null!;
 
     public static readonly AsyncLazy<MushroomsDatabase> Instance = new AsyncLazy<MushroomsDatabase>(async () =>
     {
       var instance = new MushroomsDatabase();
-      CreateTableResult result = await Database.CreateTableAsync<Mushroom>();
+    //  var result = await _database.CreateTableAsync<Mushroom>();
       return instance;
     });
 
     public MushroomsDatabase()
     {
-      Database = new SQLiteAsyncConnection(DataConstants.DatabasePath, DataConstants.Flags);
+      _database = new SQLiteAsyncConnection(DataConstants.DatabasePath, DataConstants.Flags);
     }
-
 
     public Task<List<Mushroom>> GetMushroomsAsync()
     {
-      return Database.Table<Mushroom>().ToListAsync();
+      return _database.Table<Mushroom>().ToListAsync();
     }
 
     public Task<List<Mushroom>> GetMushroomsNotDoneAsync()
     {
-      return Database.QueryAsync<Mushroom>("SELECT * FROM [Mushroom] WHERE [Done] = 0");
+      return _database.QueryAsync<Mushroom>("SELECT * FROM [Mushroom] WHERE [Done] = 0");
     }
 
     public Task<Mushroom> GetMushroomAsync(int id)
     {
-      return Database.Table<Mushroom>().Where(i => i.Id == id).FirstOrDefaultAsync();
+      return _database.Table<Mushroom>().Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 
     public Task<int> SaveItemAsync(Mushroom mushroom)
     {
       if (mushroom.Id != 0)
       {
-        return Database.UpdateAsync(mushroom);
+        return _database.UpdateAsync(mushroom);
       }
       else
       {
-        return Database.InsertAsync(mushroom);
+        return _database.InsertAsync(mushroom);
       }
     }
 
     public Task<int> DeleteItemAsync(Mushroom mushroom)
     {
-      return Database.DeleteAsync(mushroom);
+      return _database.DeleteAsync(mushroom);
     }
   }
 }

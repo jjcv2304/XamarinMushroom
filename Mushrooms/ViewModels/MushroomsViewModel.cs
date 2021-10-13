@@ -15,7 +15,8 @@ namespace Mushrooms.ViewModels
     {
       Title = "Browse";
       Mushrooms = new ObservableCollection<Mushroom>();
-      LoadMushroomsCommand = new Command(async () => await ExecuteLoadMushroomsCommand());
+      //LoadMushroomsCommand = new Command(async () => await ExecuteLoadMushroomsCommand());
+      LoadMushroomsCommand = new Command(ExecuteLoadMushroomsCommand);
 
       MushroomTapped = new Command<Mushroom>(OnMushroomSelected);
 
@@ -39,7 +40,7 @@ namespace Mushrooms.ViewModels
     public Command<Mushroom> MushroomTapped { get; }
 
 
-    async Task ExecuteLoadMushroomsCommand()
+    private async void ExecuteLoadMushroomsCommand()
     {
       IsBusy = true;
 
