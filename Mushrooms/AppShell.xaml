@@ -80,7 +80,7 @@
     -->
     <FlyoutItem Title="Browse" Icon="icon_feed.png" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Route="MushroomsPage1" ContentTemplate="{DataTemplate local:MushroomsPage}" Title="FIND"/>
-        <ShellContent Route="AboutPage1" ContentTemplate="{DataTemplate local:AboutPage}" Title="ADD"/>
+    <ShellContent Route="NewMushroomPage1" ContentTemplate="{DataTemplate local:NewMushroomPage}" Title="ADD"/>
     </FlyoutItem>
     <FlyoutItem Title="About" Icon="icon_about.png">
         <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />

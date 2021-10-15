@@ -38,7 +38,7 @@ namespace Mushrooms.Data
       return _database.Table<Mushroom>().Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 
-    public Task<int> SaveItemAsync(Mushroom mushroom)
+    public Task<int> SaveAsync(Mushroom mushroom)
     {
       if (mushroom.Id != 0)
       {

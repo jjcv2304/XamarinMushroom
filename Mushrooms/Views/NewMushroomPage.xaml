@@ -1,22 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mushrooms.Views.NewMushroomPage"
              Shell.PresentationMode="ModalAnimated"
              Title="New Mushroom"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:converters="clr-namespace:Mushrooms.Converters;assembly=Mushrooms"
              ios:Page.UseSafeArea="true">
-    <ContentPage.Content>
-        <StackLayout Spacing="3" Padding="15">
-            <Label Text="Common Name" FontSize="Medium" />
-            <Entry Text="{Binding CommonName, Mode=TwoWay}" FontSize="Medium" />
-            <Label Text="ScientificName" FontSize="Medium" />
-            <Editor Text="{Binding ScientificName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
-                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
-            </StackLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:IntEnumConverter x:Key="intEnum"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+
+
+
+    <ScrollView>
+      <StackLayout Spacing="3" Padding="15">
+        <Label Text="Common Name" FontSize="Medium" />
+        <Entry Text="{Binding CommonName, Mode=TwoWay}" FontSize="Medium" />
+        <Label Text="ScientificName" FontSize="Medium" />
+        <Editor Text="{Binding ScientificName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+        <Label Text="Cap" FontSize="Medium" />
+        <Picker ItemsSource="{Binding CapList}" SelectedIndex="{Binding Cap, Converter={StaticResource intEnum}}"/>
+        <Label Text="MarginType" FontSize="Medium" />
+        <Picker ItemsSource="{Binding MarginTypeList}" SelectedIndex="{Binding MarginType, Converter={StaticResource intEnum}}"/>
+        <Label Text="MarginCurvature" FontSize="Medium" />
+        <Picker ItemsSource="{Binding MarginCurvatureList}" SelectedIndex="{Binding MarginCurvature, Converter={StaticResource intEnum}}"/>
+        <Label Text="GillAttachment" FontSize="Medium" />
+        <Picker ItemsSource="{Binding GillAttachmentList}" SelectedIndex="{Binding GillAttachment, Converter={StaticResource intEnum}}"/>
+        <Label Text="StemShape" FontSize="Medium" />
+        <Picker ItemsSource="{Binding StemShapeList}" SelectedIndex="{Binding StemShape, Converter={StaticResource intEnum}}"/>
+        <Label Text="RingType" FontSize="Medium" />
+        <Picker ItemsSource="{Binding RingTypeList}" SelectedIndex="{Binding RingType, Converter={StaticResource intEnum}}"/>
+        <StackLayout Orientation="Horizontal">
+          <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+          <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
         </StackLayout>
-    </ContentPage.Content>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
 </ContentPage>
