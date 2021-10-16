@@ -6,10 +6,11 @@
              Title="New Mushroom"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:converters="clr-namespace:Mushrooms.Converters;assembly=Mushrooms"
-             ios:Page.UseSafeArea="true">
+             xmlns:models="clr-namespace:Mushrooms.Models;assembly=Mushrooms"
+             >
   <ContentPage.Resources>
     <ResourceDictionary>
-      <converters:IntEnumConverter x:Key="intEnum"/>
+      <converters:IntEnumConverter x:Key="IntEnum"/>
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Content>
@@ -23,17 +24,17 @@
         <Label Text="ScientificName" FontSize="Medium" />
         <Editor Text="{Binding ScientificName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
         <Label Text="Cap" FontSize="Medium" />
-        <Picker ItemsSource="{Binding CapList}" SelectedIndex="{Binding Cap, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding CapList}" SelectedIndex="{Binding Cap, Converter={StaticResource IntEnum}}"/>
         <Label Text="MarginType" FontSize="Medium" />
-        <Picker ItemsSource="{Binding MarginTypeList}" SelectedIndex="{Binding MarginType, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding MarginTypeList}" SelectedIndex="{Binding MarginType, Converter={StaticResource IntEnum}}"/>
         <Label Text="MarginCurvature" FontSize="Medium" />
-        <Picker ItemsSource="{Binding MarginCurvatureList}" SelectedIndex="{Binding MarginCurvature, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding MarginCurvatureList}" SelectedIndex="{Binding MarginCurvature, Converter={StaticResource IntEnum}}"/>
         <Label Text="GillAttachment" FontSize="Medium" />
-        <Picker ItemsSource="{Binding GillAttachmentList}" SelectedIndex="{Binding GillAttachment, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding GillAttachmentList}" SelectedIndex="{Binding GillAttachment, Converter={StaticResource IntEnum}}"/>
         <Label Text="StemShape" FontSize="Medium" />
-        <Picker ItemsSource="{Binding StemShapeList}" SelectedIndex="{Binding StemShape, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding StemShapeList}" SelectedIndex="{Binding StemShape, Converter={StaticResource IntEnum}}"/>
         <Label Text="RingType" FontSize="Medium" />
-        <Picker ItemsSource="{Binding RingTypeList}" SelectedIndex="{Binding RingType, Converter={StaticResource intEnum}}"/>
+        <Picker ItemsSource="{Binding RingTypeList}" SelectedIndex="{Binding RingType, Converter={StaticResource IntEnum}}"/>
         <StackLayout Orientation="Horizontal">
           <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
           <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

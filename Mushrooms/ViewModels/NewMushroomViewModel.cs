@@ -44,79 +44,42 @@ namespace Mushrooms.ViewModels
       get => _cap;
       set => SetProperty(ref _cap, value);
     }
-    public List<string> CapList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(Cap)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
-
+    public List<string> CapList => Enum<Cap>.ToList;
 
     public MarginType MarginType
     {
       get => _marginType;
       set => SetProperty(ref _marginType, value);
     }
-    public List<string> MarginTypeList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(MarginType)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
+    public List<string> MarginTypeList => Enum<Cap>.ToList;
 
     public MarginCurvature MarginCurvature
     {
       get => _marginCurvature;
       set => SetProperty(ref _marginCurvature, value);
     }
-    public List<string> MarginCurvatureList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(MarginCurvature)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
+    public List<string> MarginCurvatureList => Enum<MarginCurvature>.ToList;
 
     public GillAttachment GillAttachment
     {
       get => _gillAttachment;
       set => SetProperty(ref _gillAttachment, value);
     }
-    public List<string> GillAttachmentList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(GillAttachment)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
+    public List<string> GillAttachmentList => Enum<GillAttachment>.ToList;
 
     public StemShape StemShape
     {
       get => _stemShape;
       set => SetProperty(ref _stemShape, value);
     }
-    public List<string> StemShapeList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(StemShape)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
+    public List<string> StemShapeList => Enum<StemShape>.ToList;
 
     public RingType RingType
     {
       get => _ringType;
       set => SetProperty(ref _ringType, value);
     }
-    public List<string> RingTypeList
-    {
-      get
-      {
-        return Enum.GetNames(typeof(RingType)).Select(b => b.SplitCamelCase()).ToList();
-      }
-    }
+    public List<string> RingTypeList => Enum<RingType>.ToList;
 
     private bool ValidateSave()
     {
