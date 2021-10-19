@@ -13,7 +13,7 @@ namespace Mushrooms.ViewModels
   {
     public MushroomsViewModel()
     {
-      Title = "Browse";
+      Title = "All Mushrooms";
       Mushrooms = new ObservableCollection<Mushroom>();
       //LoadMushroomsCommand = new Command(async () => await ExecuteLoadMushroomsCommand());
       LoadMushroomsCommand = new Command(ExecuteLoadMushroomsCommand);

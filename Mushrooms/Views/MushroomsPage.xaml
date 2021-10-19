@@ -8,7 +8,7 @@
              xmlns:model="clr-namespace:Mushrooms.Models"
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddMushroomCommand}" />
+        <ToolbarItem Text="Add To Diary" Command="{Binding AddMushroomCommand}" />
     </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
