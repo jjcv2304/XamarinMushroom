@@ -33,13 +33,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ExportData.xaml">
+    <Compile Update="Views\ExportDataPage.xaml.cs">
+      <DependentUpon>ExportDataPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ImportDataPage.xaml.cs">
+      <DependentUpon>ImportDataPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ExportDataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\IdentifyMushroomPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ImportData.xaml">
+    <EmbeddedResource Update="Views\ImportDataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MushroomDiaryPage.xaml">

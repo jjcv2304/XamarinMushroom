@@ -84,8 +84,8 @@
     <ShellContent Route="MushroomDiaryPage" ContentTemplate="{DataTemplate local:MushroomDiaryPage}" Title="DIARY"/>
   </FlyoutItem>
   <FlyoutItem Title="Browse" FlyoutDisplayOptions="AsMultipleItems">
-    <ShellContent Route="ImportData" ContentTemplate="{DataTemplate local:ImportData}" Title="Import data"/>
-    <ShellContent Route="ExportData" ContentTemplate="{DataTemplate local:ExportData}" Title="Export data"/>
+    <ShellContent Route="ImportData" ContentTemplate="{DataTemplate local:ImportDataPage}" Title="Import data"/>
+    <ShellContent Route="ExportData" ContentTemplate="{DataTemplate local:ExportDataPage}" Title="Export data"/>
   </FlyoutItem>
   <FlyoutItem Title="About" Icon="icon_about.png">
     <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />

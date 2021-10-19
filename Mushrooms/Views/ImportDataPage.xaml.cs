@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Mushrooms.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class ExportData : ContentPage
+  public partial class ImportDataPage : ContentPage
   {
-    public ExportData()
+    public ImportDataPage()
     {
       InitializeComponent();
     }
