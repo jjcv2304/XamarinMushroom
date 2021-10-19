@@ -9,9 +9,9 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-  public class MushroomsViewModel : BaseViewModel<Mushroom>
+  public class MushroomsVM : BaseVM<Mushroom>
   {
-    public MushroomsViewModel()
+    public MushroomsVM()
     {
       Title = "All Mushrooms";
       Mushrooms = new ObservableCollection<Mushroom>();
@@ -83,7 +83,7 @@ namespace Mushrooms.ViewModels
 
       // This will push the MushroomDetailPage onto the navigation stack
       await Shell.Current.GoToAsync(
-          $"{nameof(MushroomDetailPage)}?{nameof(MushroomDetailViewModel.MushroomId)}={mushroom.Id}");
+          $"{nameof(MushroomDetailPage)}?{nameof(MushroomDetailVM.MushroomId)}={mushroom.Id}");
     }
   }
 }

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 namespace Mushrooms.ViewModels
 {
   [QueryProperty(nameof(MushroomId), nameof(MushroomId))]
-  public class MushroomDetailViewModel : BaseViewModel<Mushroom>
+  public class MushroomDetailVM : BaseVM<Mushroom>
   {
     public string MushroomId
     {

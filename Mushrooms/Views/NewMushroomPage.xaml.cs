@@ -17,7 +17,7 @@ namespace Mushrooms.Views
         public NewMushroomPage()
         {
             InitializeComponent();
-            BindingContext = new NewMushroomViewModel();
+            BindingContext = new NewMushroomVM();
         }
     }
 }

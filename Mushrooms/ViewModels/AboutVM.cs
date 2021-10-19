@@ -6,9 +6,9 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-    internal class AboutViewModel : BaseViewModel<Mushroom>
+    internal class AboutVM : BaseVM<Mushroom>
     {
-        public AboutViewModel()
+        public AboutVM()
         {
             Title = "About";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));

@@ -14,7 +14,7 @@ namespace Mushrooms.Views
         public MushroomDetailPage()
         {
             InitializeComponent();
-            BindingContext = new MushroomDetailViewModel();
+            BindingContext = new MushroomDetailVM();
         }
     }
 }

@@ -12,11 +12,11 @@ namespace Mushrooms.Views
 {
   public partial class MushroomsPage : ContentPage
   {
-    private MushroomsViewModel _mushroomsViewModel;
+    private MushroomsVM _mushroomsViewModel;
     public MushroomsPage()
     {
       InitializeComponent();
-      BindingContext = _mushroomsViewModel = new MushroomsViewModel();
+      BindingContext = _mushroomsViewModel = new MushroomsVM();
     }
 
     protected override async void OnAppearing()
