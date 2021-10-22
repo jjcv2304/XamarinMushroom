@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 
 namespace Mushrooms.Views
 {
-    public partial class NewMushroomPage : ContentPage
+  public partial class NewMushroomPage : ContentPage
+  {
+    private NewMushroomVM _newMushroomVM;
+
+    public NewMushroomPage()
     {
-        internal Mushroom Mushroom { get; set; }
-        
-        public NewMushroomPage()
-        {
-            InitializeComponent();
-            BindingContext = new NewMushroomVM();
-        }
+      InitializeComponent();
+      BindingContext = _newMushroomVM = new NewMushroomVM();
     }
+  }
 }

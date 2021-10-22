@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Item.cs" />
+    <Compile Remove="Services\MockDataStore.cs" />
+    <Compile Remove="Services\MockMushroomDataStore.cs" />
     <Compile Remove="ViewModels\ItemDetailViewModel.cs" />
     <Compile Remove="ViewModels\ItemsViewModel.cs" />
     <Compile Remove="ViewModels\LoginViewModel.cs" />

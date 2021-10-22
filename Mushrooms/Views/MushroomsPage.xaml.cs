@@ -12,7 +12,7 @@ namespace Mushrooms.Views
 {
   public partial class MushroomsPage : ContentPage
   {
-    private MushroomsVM _mushroomsViewModel;
+    private readonly MushroomsVM _mushroomsViewModel;
     public MushroomsPage()
     {
       InitializeComponent();
