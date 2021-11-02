@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Mushrooms.ViewModels;assembly=Mushrooms"
              xmlns:models="clr-namespace:Mushrooms.Models;assembly=Mushrooms"
+             xmlns:fontawesome="clr-namespace:Mushrooms.Utils"
              x:Class="Mushrooms.Views.MushroomLibraryPage">
 
   <ContentPage.ToolbarItems>
@@ -39,14 +40,30 @@
               <!--<Label Text="Delete" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"
                      LineBreakMode="NoWrap" 
                      FontSize="16" />-->
-            <Button  Text="\uf1f8" Grid.Row="0" Grid.Column="1" >
-                <Button.ImageSource>
-                <FontImageSource Glyph="\uf1f8;" FontFamily="{StaticResource FontIcon}"/>
-                </Button.ImageSource>
-              </Button>
-            <Label Text="Update" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"
+            <!--<Image BackgroundColor="#D1D1D1" Grid.Row="0" Grid.Column="1">
+                <Image.Source>
+                  <FontImageSource Glyph="&#xf30c;"
+                                   FontFamily="{OnPlatform iOS=Ionicons, Android=ionicons.ttf#, UWP=Ionicons}"
+                                   Size="44" />
+                </Image.Source>
+              </Image>-->
+              <!--<Image BackgroundColor="Green" Grid.Row="0" Grid.Column="1">
+                <Image.Source>
+                <FontImageSource Glyph="&#xf307;"
+                                   FontFamily="{OnPlatform Android=fa.ttf#, UWP=fa }"
+                                   Size="20" />
+                </Image.Source>
+              </Image>-->
+
+            <Label  Text="{x:Static fontawesome:FontAwesomeIcons.Accusoft}"
+                    FontFamily="{StaticResource FontAwesomeBrands}"  Grid.Row="0" Grid.Column="1" />
+            
+              <Label Text="{x:Static fontawesome:FontAwesomeIcons.Minus}"
+                     FontFamily="{StaticResource FontAwesomeSolid}"  Grid.Row="1" Grid.Column="1" />
+
+            <!--<Label Text="Update" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"
                      LineBreakMode="NoWrap"
-                     FontSize="13" />
+                     FontSize="13" />-->
               <Grid.GestureRecognizers>
                 <TapGestureRecognizer 
                   NumberOfTapsRequired="1"

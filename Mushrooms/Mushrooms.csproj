@@ -34,10 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Views\ExportDataPage.xaml.cs">
       <DependentUpon>ExportDataPage.xaml</DependentUpon>
     </Compile>
@@ -62,5 +58,9 @@
     <EmbeddedResource Update="Views\MushroomLibraryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>
