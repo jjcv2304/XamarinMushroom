@@ -18,23 +18,43 @@
                     SelectionMode="None">
       <CollectionView.ItemTemplate>
         <DataTemplate>
-          <StackLayout Padding="10" x:DataType="models:Mushroom">
-            <Label Text="{Binding ScientificName}" 
-                   LineBreakMode="NoWrap" 
-                   Style="{DynamicResource ListItemTextStyle}" 
-                   FontSize="16" />
-            <Label Text="{Binding CommonName}" 
-                   LineBreakMode="NoWrap"
-                   Style="{DynamicResource ListItemDetailTextStyle}"
-                   FontSize="13" />
-            <StackLayout.GestureRecognizers>
-              <TapGestureRecognizer 
-                NumberOfTapsRequired="1"
-                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MushroomsVM}}, Path=MushroomTapped}"		
-                CommandParameter="{Binding .}">
-              </TapGestureRecognizer>
-            </StackLayout.GestureRecognizers>
-          </StackLayout>
+            <Grid RowSpacing="0" ColumnSpacing="0" x:DataType="models:Mushroom">
+              <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+              </Grid.ColumnDefinitions>
+              <Label Text="{Binding ScientificName}" Grid.Row="0" Grid.Column="0"
+                     LineBreakMode="NoWrap" 
+                     Style="{DynamicResource ListItemTextStyle}" 
+                     FontSize="16" />
+              <Label Text="{Binding CommonName}" Grid.Row="1" Grid.Column="0"
+                     LineBreakMode="NoWrap"
+                     Style="{DynamicResource ListItemDetailTextStyle}"
+                     FontSize="13" />
+
+              <!--<Label Text="Delete" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End"
+                     LineBreakMode="NoWrap" 
+                     FontSize="16" />-->
+            <Button  Text="\uf1f8" Grid.Row="0" Grid.Column="1" >
+                <Button.ImageSource>
+                <FontImageSource Glyph="\uf1f8;" FontFamily="{StaticResource FontIcon}"/>
+                </Button.ImageSource>
+              </Button>
+            <Label Text="Update" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"
+                     LineBreakMode="NoWrap"
+                     FontSize="13" />
+              <Grid.GestureRecognizers>
+                <TapGestureRecognizer 
+                  NumberOfTapsRequired="1"
+                  Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:MushroomsVM}}, Path=MushroomTapped}"		
+                  CommandParameter="{Binding .}">
+                </TapGestureRecognizer>
+            </Grid.GestureRecognizers>
+            </Grid>
         </DataTemplate>
       </CollectionView.ItemTemplate>
     </CollectionView>
