@@ -7,10 +7,10 @@
     -->
   <Application.Resources>
     <ResourceDictionary>
-      <Color x:Key="Primary">#CD7F230C</Color>
-      <Color x:Key="Secondary">#900A4C0C</Color>
+      <Color x:Key="Primary">#900C5F10</Color>
+      <Color x:Key="Secondary">#806043 </Color>
      
-      <Style TargetType="Button">
+      <!--<Style TargetType="Button">
         <Setter Property="TextColor" Value="#900A4C0C"></Setter>
         <Setter Property="VisualStateManager.VisualStateGroups">
           <VisualStateGroupList>
@@ -28,7 +28,7 @@
             </VisualStateGroup>
           </VisualStateGroupList>
         </Setter>
-      </Style>
+      </Style>-->
 
       <OnPlatform x:TypeArguments="x:String" 
                   x:Key="FontAwesomeBrands">
