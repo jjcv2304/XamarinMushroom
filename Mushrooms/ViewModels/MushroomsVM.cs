@@ -21,6 +21,10 @@ namespace Mushrooms.ViewModels
       MushroomTapped = new Command<Mushroom>(OnMushroomSelected);
 
       AddMushroomCommand = new Command(OnAddMushroom);
+
+      DeleteMushroomCommand = new Command(OnDeleteMushroom);
+
+      EditMushroomCommand = new Command(OnEditMushroom);
     }
 
     private Mushroom _selectedMushroom;
@@ -38,6 +42,9 @@ namespace Mushrooms.ViewModels
     public Command LoadMushroomsCommand { get; }
     public Command AddMushroomCommand { get; }
     public Command<Mushroom> MushroomTapped { get; }
+    public Command DeleteMushroomCommand { get;  }
+    public Command EditMushroomCommand { get; }
+
 
 
     private async void ExecuteLoadMushroomsCommand()
@@ -72,6 +79,16 @@ namespace Mushrooms.ViewModels
     }
 
     private async void OnAddMushroom(object obj)
+    {
+      // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
+    }
+    
+    private async void OnDeleteMushroom(object obj)
+    {
+      // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
+    }
+
+    private async void OnEditMushroom(object obj)
     {
       // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
     }
