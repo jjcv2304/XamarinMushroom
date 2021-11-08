@@ -38,15 +38,21 @@ namespace Mushrooms.ViewModels
         OnMushroomSelected(value);
       }
     }
+
+
     public ObservableCollection<Mushroom> Mushrooms { get; }
     public Command LoadMushroomsCommand { get; }
     public Command AddMushroomCommand { get; }
     public Command<Mushroom> MushroomTapped { get; }
-    public Command DeleteMushroomCommand { get;  }
+    public Command DeleteMushroomCommand { get; }
     public Command EditMushroomCommand { get; }
 
 
-
+    public void OnAppearing()
+    {
+      IsBusy = true;
+      SelectedMushroom = null;
+    }
     private async void ExecuteLoadMushroomsCommand()
     {
       IsBusy = true;
@@ -71,28 +77,18 @@ namespace Mushrooms.ViewModels
         IsBusy = false;
       }
     }
-
-    public void OnAppearing()
-    {
-      IsBusy = true;
-      SelectedMushroom = null;
-    }
-
     private async void OnAddMushroom(object obj)
     {
       // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
     }
-    
     private async void OnDeleteMushroom(object obj)
     {
       // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
     }
-
     private async void OnEditMushroom(object obj)
     {
       // await Shell.Current.GoToAsync(nameof(NewMushroomPage));
     }
-
     async void OnMushroomSelected(Mushroom mushroom)
     {
       if (mushroom == null)

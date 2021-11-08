@@ -1,6 +1,7 @@
 ﻿# MUSHROOMS
 
 ## ROUTE MAP
+  - Check tutorial about vmmv
   - Delete mushroom
   - Edit mushroom: color, cap, stem, etc
   - Unit Tests
