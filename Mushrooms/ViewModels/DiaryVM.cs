@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mushrooms.ViewModels
 {
-  class MushroomDiaryVM
+  class DiaryVM
   {
   }
 }

@@ -12,12 +12,12 @@ namespace Mushrooms.Views
 {
   public partial class NewMushroomPage : ContentPage
   {
-    private NewMushroomVM _newMushroomVM;
+    private NewVM _newMushroomVM;
 
     public NewMushroomPage()
     {
       InitializeComponent();
-      BindingContext = _newMushroomVM = new NewMushroomVM();
+      BindingContext = _newMushroomVM = new NewVM();
     }
   }
 }

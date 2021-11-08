@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-  public class NewMushroomVM : BaseVM<Mushroom>
+  public class NewVM : BaseVM<Mushroom>
   {
     private string _commonName;
     private string _scientificName;
@@ -19,7 +19,7 @@ namespace Mushrooms.ViewModels
     private StemShape _stemShape;
     private RingType _ringType;
 
-    public NewMushroomVM()
+    public NewVM()
     {
       SaveCommand = new Command(OnSave, ValidateSave);
       CancelCommand = new Command(OnCancel);

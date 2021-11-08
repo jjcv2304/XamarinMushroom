@@ -96,7 +96,7 @@ namespace Mushrooms.ViewModels
 
       // This will push the MushroomDetailPage onto the navigation stack
       await Shell.Current.GoToAsync(
-          $"{nameof(MushroomDetailPage)}?{nameof(MushroomDetailVM.MushroomId)}={mushroom.Id}");
+          $"{nameof(MushroomDetailPage)}?{nameof(DetailVM.MushroomId)}={mushroom.Id}");
     }
   }
 }
