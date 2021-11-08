@@ -61,7 +61,7 @@ namespace Mushrooms.ViewModels
       {
         Mushrooms.Clear();
         //var mushrooms = await DataStore.GetAsync(true);
-        MushroomsDatabase database = await MushroomsDatabase.Instance;
+        MushroomsRepository database = await MushroomsRepository.Instance;
         var mushrooms = await database.GetMushroomsAsync();
         foreach (var mushroom in mushrooms)
         {

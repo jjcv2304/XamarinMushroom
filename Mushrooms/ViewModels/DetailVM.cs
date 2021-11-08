@@ -75,7 +75,7 @@ namespace Mushrooms.ViewModels
     {
       try
       {
-        MushroomsDatabase database = await MushroomsDatabase.Instance;
+        MushroomsRepository database = await MushroomsRepository.Instance;
         var mushroom = await database.GetMushroomAsync(int.Parse(mushroomIdentifier));
         //var mushroom = await DataStore.GetAsync(mushroomId);
         Id = mushroom.Id.ToString();

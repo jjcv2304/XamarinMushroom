@@ -95,7 +95,7 @@ namespace Mushrooms.ViewModels
     }
     private async void OnSave()
     {
-      MushroomsDatabase database = await MushroomsDatabase.Instance;
+      MushroomsRepository database = await MushroomsRepository.Instance;
       Mushroom newMushroom = new Mushroom(0, _commonName, _scientificName, _cap, _marginType,
                 _marginCurvature, _gillAttachment, _stemShape, _ringType
             );
