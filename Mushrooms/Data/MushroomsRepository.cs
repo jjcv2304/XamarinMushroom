@@ -7,18 +7,18 @@ using SQLite;
 
 namespace Mushrooms.Data
 {
-  public class MushroomsDatabase
+  public class MushroomsRepository : IMushroomsRepository
   {
     private static SQLiteAsyncConnection _database = null!;
 
-    public static readonly AsyncLazy<MushroomsDatabase> Instance = new AsyncLazy<MushroomsDatabase>(async () =>
+    public static readonly AsyncLazy<MushroomsRepository> Instance = new AsyncLazy<MushroomsRepository>(async () =>
     {
-      var instance = new MushroomsDatabase();
+      var instance = new MushroomsRepository();
     //  var result = await _database.CreateTableAsync<Mushroom>();
       return instance;
     });
 
-    public MushroomsDatabase()
+    public MushroomsRepository()
     {
       _database = new SQLiteAsyncConnection(DataConstants.DatabasePath, DataConstants.Flags);
     }
