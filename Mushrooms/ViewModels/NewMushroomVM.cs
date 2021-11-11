@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-  public class NewMushroomVM : BaseVM<Mushroom>
+  public class NewMushroomVM : BaseViewModel
   {
     private string _commonName;
     private string _scientificName;
@@ -27,59 +27,59 @@ namespace Mushrooms.ViewModels
           (_, __) => SaveCommand.ChangeCanExecute();
     }
 
-    public string CommonName
-    {
-      get => _commonName;
-      set => SetProperty(ref _commonName, value);
-    }
+    //public string CommonName
+    //{
+    //  get => _commonName;
+    //  set => SetProperty(ref _commonName, value);
+    //}
 
-    public string ScientificName
-    {
-      get => _scientificName;
-      set => SetProperty(ref _scientificName, value);
-    }
+    //public string ScientificName
+    //{
+    //  get => _scientificName;
+    //  set => SetProperty(ref _scientificName, value);
+    //}
 
-    public Cap Cap
-    {
-      get => _cap;
-      set => SetProperty(ref _cap, value);
-    }
-    public List<string> CapList => Enum<Cap>.ToList;
+    //public Cap Cap
+    //{
+    //  get => _cap;
+    //  set => SetProperty(ref _cap, value);
+    //}
+    //public List<string> CapList => Enum<Cap>.ToList;
 
-    public MarginType MarginType
-    {
-      get => _marginType;
-      set => SetProperty(ref _marginType, value);
-    }
-    public List<string> MarginTypeList => Enum<Cap>.ToList;
+    //public MarginType MarginType
+    //{
+    //  get => _marginType;
+    //  set => SetProperty(ref _marginType, value);
+    //}
+    //public List<string> MarginTypeList => Enum<Cap>.ToList;
 
-    public MarginCurvature MarginCurvature
-    {
-      get => _marginCurvature;
-      set => SetProperty(ref _marginCurvature, value);
-    }
-    public List<string> MarginCurvatureList => Enum<MarginCurvature>.ToList;
+    //public MarginCurvature MarginCurvature
+    //{
+    //  get => _marginCurvature;
+    //  set => SetProperty(ref _marginCurvature, value);
+    //}
+    //public List<string> MarginCurvatureList => Enum<MarginCurvature>.ToList;
 
-    public GillAttachment GillAttachment
-    {
-      get => _gillAttachment;
-      set => SetProperty(ref _gillAttachment, value);
-    }
-    public List<string> GillAttachmentList => Enum<GillAttachment>.ToList;
+    //public GillAttachment GillAttachment
+    //{
+    //  get => _gillAttachment;
+    //  set => SetProperty(ref _gillAttachment, value);
+    //}
+    //public List<string> GillAttachmentList => Enum<GillAttachment>.ToList;
 
-    public StemShape StemShape
-    {
-      get => _stemShape;
-      set => SetProperty(ref _stemShape, value);
-    }
-    public List<string> StemShapeList => Enum<StemShape>.ToList;
+    //public StemShape StemShape
+    //{
+    //  get => _stemShape;
+    //  set => SetProperty(ref _stemShape, value);
+    //}
+    //public List<string> StemShapeList => Enum<StemShape>.ToList;
 
-    public RingType RingType
-    {
-      get => _ringType;
-      set => SetProperty(ref _ringType, value);
-    }
-    public List<string> RingTypeList => Enum<RingType>.ToList;
+    //public RingType RingType
+    //{
+    //  get => _ringType;
+    //  set => SetProperty(ref _ringType, value);
+    //}
+    //public List<string> RingTypeList => Enum<RingType>.ToList;
 
     private bool ValidateSave()
     {
@@ -95,12 +95,12 @@ namespace Mushrooms.ViewModels
     }
     private async void OnSave()
     {
-      MushroomsDatabase database = await MushroomsDatabase.Instance;
+      MushroomsRepository database = await MushroomsRepository.Instance;
       Mushroom newMushroom = new Mushroom(0, _commonName, _scientificName, _cap, _marginType,
                 _marginCurvature, _gillAttachment, _stemShape, _ringType
             );
 
-      var t = Cap;
+     // var t = Cap;
 
       await database.SaveAsync(newMushroom);
 

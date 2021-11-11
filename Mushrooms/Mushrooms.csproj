@@ -9,8 +9,10 @@
 
   <ItemGroup>
     <Compile Remove="Models\Item.cs" />
+    <Compile Remove="Services\IDataStore.cs" />
     <Compile Remove="Services\MockDataStore.cs" />
     <Compile Remove="Services\MockMushroomDataStore.cs" />
+    <Compile Remove="ViewModels\BaseVM.cs" />
     <Compile Remove="ViewModels\ItemDetailViewModel.cs" />
     <Compile Remove="ViewModels\ItemsViewModel.cs" />
     <Compile Remove="ViewModels\LoginViewModel.cs" />

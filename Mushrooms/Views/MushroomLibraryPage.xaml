@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Mushrooms.ViewModels;assembly=Mushrooms"
-             
+             xmlns:models="clr-namespace:Mushrooms.Models;assembly=Mushrooms"
              xmlns:fontawesome="clr-namespace:Mushrooms.Utils"
              x:Class="Mushrooms.Views.MushroomLibraryPage">
 
@@ -13,13 +13,14 @@
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
       https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
     -->
-  <RefreshView x:DataType="viewModels:MushroomsVM" Command="{Binding LoadMushroomsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+  <!--<RefreshView x:DataType="viewModels:MushroomsVM" Command="{Binding LoadMushroomsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}"> todo re implement-->
+  <RefreshView x:DataType="viewModels:MushroomsVM" Command="{Binding LoadMushroomsCommand}" >
     <CollectionView x:Name="MushroomsListView"
                     ItemsSource="{Binding Mushrooms}"
                     SelectionMode="None">
       <CollectionView.ItemTemplate>
         <DataTemplate>
-            <Grid RowSpacing="0" ColumnSpacing="0" x:DataType="viewModels:MushroomsVM">
+            <Grid RowSpacing="0" ColumnSpacing="0" x:DataType="models:Mushroom">
               <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="50" />
@@ -42,11 +43,11 @@
                      Style="{DynamicResource ListItemDetailTextStyle}"
                      FontSize="13" />
 
-            <Button Text="{x:Static fontawesome:FontAwesomeIcons.TrashAlt}" Command="{Binding DeleteMushroomCommand}"
-                    FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="0" Grid.Column="2" />
+            <!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.TrashAlt}" Command="{Binding DeleteMushroomCommand}"
+                    FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="0" Grid.Column="2" />-->
 
-            <Button Text="{x:Static fontawesome:FontAwesomeIcons.Edit}" Command="{Binding EditeMushroomCommand}"
-                     FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="1" Grid.Column="2" />
+            <!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.Edit}" Command="{Binding EditeMushroomCommand}"
+                     FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="1" Grid.Column="2" />-->
 
               <Grid.GestureRecognizers>
                 <TapGestureRecognizer 

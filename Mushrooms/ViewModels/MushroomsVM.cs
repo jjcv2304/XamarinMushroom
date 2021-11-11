@@ -9,11 +9,11 @@ using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
-  public class MushroomsVM : BaseVM<Mushroom>
+  public class MushroomsVM : BaseViewModel
   {
     public MushroomsVM()
     {
-      Title = "All Mushrooms";
+      //Title = "All Mushrooms";
       Mushrooms = new ObservableCollection<Mushroom>();
       //LoadMushroomsCommand = new Command(async () => await ExecuteLoadMushroomsCommand());
       LoadMushroomsCommand = new Command(ExecuteLoadMushroomsCommand);
@@ -34,8 +34,11 @@ namespace Mushrooms.ViewModels
       get => _selectedMushroom;
       set
       {
-        SetProperty(ref _selectedMushroom, value);
-        OnMushroomSelected(value);
+        //_selectedPie = value;
+        //OnPropertyChanged(nameof(SelectedPie));
+
+        //SetProperty(ref _selectedMushroom, value);
+        //OnMushroomSelected(value);
       }
     }
 
@@ -50,18 +53,18 @@ namespace Mushrooms.ViewModels
 
     public void OnAppearing()
     {
-      IsBusy = true;
+      //IsBusy = true;
       SelectedMushroom = null;
     }
     private async void ExecuteLoadMushroomsCommand()
     {
-      IsBusy = true;
+     // IsBusy = true;
 
       try
       {
         Mushrooms.Clear();
         //var mushrooms = await DataStore.GetAsync(true);
-        MushroomsDatabase database = await MushroomsDatabase.Instance;
+        MushroomsRepository database = await MushroomsRepository.Instance;
         var mushrooms = await database.GetMushroomsAsync();
         foreach (var mushroom in mushrooms)
         {
@@ -74,7 +77,7 @@ namespace Mushrooms.ViewModels
       }
       finally
       {
-        IsBusy = false;
+       // IsBusy = false;
       }
     }
     private async void OnAddMushroom(object obj)
