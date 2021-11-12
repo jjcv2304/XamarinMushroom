@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:Mushrooms.ViewModels;assembly=Mushrooms"
+             xmlns:viewModels="clr-namespace:Mushrooms.ViewModels"
              xmlns:fontawesome="clr-namespace:Mushrooms.Utils"
+             xmlns:behaviors="clr-namespace:Mushrooms.Behaviors"
              x:Class="Mushrooms.Views.MushroomLibraryPage"
              Title="Library">
 
@@ -10,7 +11,45 @@
     <ToolbarItem Text="Add To Diary" Command="{Binding AddMushroomCommand}" />
   </ContentPage.ToolbarItems>
 
+  <Grid>
 
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"></RowDefinition>
+      <RowDefinition Height="50"></RowDefinition>
+      <RowDefinition Height="*"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <ListView HasUnevenRows="True" Grid.Row="2" ItemsSource="{Binding MushroomList}"
+              x:Name="PiesListView" CachingStrategy="RecycleElement"  >
+      <!--<ListView.Behaviors>
+        <behaviors:EventToCommandBehavior 
+                    EventName="ItemTapped" 
+                    Command="{Binding PieSelectedCommand}" 
+                    EventArgsConverter="{StaticResource LocalItemTappedConverter}" >
+        </behaviors:EventToCommandBehavior>
+      </ListView.Behaviors>-->
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid HeightRequest="75"  Margin="5" RowSpacing="2">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <!--<Image Grid.Row="0" HeightRequest="125" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ScientificName}"></Image>-->
+              <Label Grid.Row="0" Grid.Column="0"  Text="{Binding ScientificName}"></Label>
+              <Label Grid.Row="0" Grid.Column="1"  Text="{Binding CommonName}" ></Label>
+              <Label Grid.Row="0" Grid.Column="2"  Text="{Binding Id}"></Label>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
 
   <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
@@ -46,11 +85,13 @@
                      Style="{DynamicResource ListItemDetailTextStyle}"
                      FontSize="13" />
 
-            --><!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.TrashAlt}" Command="{Binding DeleteMushroomCommand}"
+            -->
+  <!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.TrashAlt}" Command="{Binding DeleteMushroomCommand}"
                     FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="0" Grid.Column="2" />-->
 
-            <!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.Edit}" Command="{Binding EditeMushroomCommand}"
-                     FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="1" Grid.Column="2" />--><!--
+  <!--<Button Text="{x:Static fontawesome:FontAwesomeIcons.Edit}" Command="{Binding EditeMushroomCommand}"
+                     FontFamily="{StaticResource FontAwesomeRegular}"  Grid.Row="1" Grid.Column="2" />-->
+  <!--
 
               <Grid.GestureRecognizers>
                 <TapGestureRecognizer 
