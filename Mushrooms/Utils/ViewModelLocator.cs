@@ -20,6 +20,6 @@ namespace Mushrooms.Utils
 
     internal static MushroomLibraryVM MushroomLibraryVM { get; set; } = new MushroomLibraryVM(App.MushroomDataService);
     
-    internal static NewMushroomVM NewMushroomVM { get; set; } = new NewMushroomVM();
+    internal static MushroomEditVM NewMushroomVM { get; set; } = new MushroomEditVM();
   }
 }

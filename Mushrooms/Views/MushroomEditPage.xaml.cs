@@ -3,10 +3,10 @@ using Xamarin.Forms;
 
 namespace Mushrooms.Views
 {
-  public partial class NewMushroomPage : ContentPage
+  public partial class MushroomEditPage : ContentPage
   {
 
-    public NewMushroomPage()
+    public MushroomEditPage()
     {
       InitializeComponent();
       this.BindingContext = ViewModelLocator.NewMushroomVM; ;

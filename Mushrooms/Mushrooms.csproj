@@ -43,6 +43,9 @@
     <Compile Update="Views\ImportDataPage.xaml.cs">
       <DependentUpon>ImportDataPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\MushroomEditPage.xaml.cs">
+      <DependentUpon>MushroomEditPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
