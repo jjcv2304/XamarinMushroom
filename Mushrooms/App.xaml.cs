@@ -1,8 +1,5 @@
 ﻿using Mushrooms.Services;
-using Mushrooms.Views;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Mushrooms
 {

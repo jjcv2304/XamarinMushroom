@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Mushrooms.Data;
-using Mushrooms.Extensions;
+﻿using Mushrooms.Data;
 using Mushrooms.Models;
 using Xamarin.Forms;
 

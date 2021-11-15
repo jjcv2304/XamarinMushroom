@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mushrooms.ViewModels;
+﻿using Mushrooms.ViewModels;
 
 namespace Mushrooms.Utils
 {

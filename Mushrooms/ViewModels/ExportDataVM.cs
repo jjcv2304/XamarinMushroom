@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Mushrooms.Services;
+﻿using Mushrooms.Services;
 
 namespace Mushrooms.ViewModels
 {

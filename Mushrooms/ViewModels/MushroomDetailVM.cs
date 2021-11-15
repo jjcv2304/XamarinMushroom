@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using Mushrooms.Data;
-using Mushrooms.Models;
 using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels

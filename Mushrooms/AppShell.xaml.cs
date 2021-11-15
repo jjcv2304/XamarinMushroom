@@ -1,7 +1,5 @@
-﻿using Mushrooms.ViewModels;
-using Mushrooms.Views;
+﻿using Mushrooms.Views;
 using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace Mushrooms

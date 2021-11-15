@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mushrooms.Utils
+﻿namespace Mushrooms.Utils
 {
   /// <summary>
   /// The unicode values for all FontAwesome icons.
