@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using Mushrooms.Utils;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Mushrooms.Views
 {
@@ -10,6 +8,7 @@ namespace Mushrooms.Views
     public AboutPage()
     {
       InitializeComponent();
+      this.BindingContext = ViewModelLocator.AboutVM; ;
     }
   }
 }

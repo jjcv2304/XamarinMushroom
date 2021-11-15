@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Mushrooms.Utils;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,7 @@ namespace Mushrooms.Views
     public ImportDataPage()
     {
       InitializeComponent();
+      this.BindingContext = ViewModelLocator.ImportDataVM; ;
     }
   }
 }
