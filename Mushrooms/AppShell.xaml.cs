@@ -11,7 +11,7 @@ namespace Mushrooms
       InitializeComponent();
       //todo check theory of routes usage
       Routing.RegisterRoute(nameof(MushroomDetailPage), typeof(MushroomDetailPage));
-      Routing.RegisterRoute(nameof(NewMushroomPage), typeof(NewMushroomPage));
+      Routing.RegisterRoute(nameof(MushroomEditPage), typeof(MushroomEditPage));
       Routing.RegisterRoute(nameof(IdentifyMushroomPage), typeof(IdentifyMushroomPage));
       Routing.RegisterRoute(nameof(MushroomLibraryPage), typeof(MushroomLibraryPage));
       Routing.RegisterRoute(nameof(MushroomDiaryPage), typeof(MushroomDiaryPage));

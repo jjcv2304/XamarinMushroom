@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Mushrooms.Models;
 using Mushrooms.Services;
+using Mushrooms.Views;
 using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
@@ -20,7 +21,7 @@ namespace Mushrooms.ViewModels
         OnPropertyChanged("MushroomList");
       }
     }
-    public ICommand PieSelectedCommand { get; }
+    public ICommand MushroomSelectedCommand { get; }
     public ICommand AddCommand { get; }
 
     public MushroomLibraryVM(MushroomDataService mushroomDataService)
@@ -28,7 +29,7 @@ namespace Mushrooms.ViewModels
       _mushroomDataService = mushroomDataService;
 
       AddCommand = new Command(OnAddCommand);
-     // PieSelectedCommand = new Command<Pie>(OnPieSelectedCommand);
+      MushroomSelectedCommand = new Command<Mushroom>(OnMushroomSelectedCommand);
 
       MushroomList = new ObservableCollection<Mushroom>();
     }
@@ -41,9 +42,10 @@ namespace Mushrooms.ViewModels
     }
 
 
-    private void OnMushroomSelectedCommand(Mushroom mushroom)
+    private async void OnMushroomSelectedCommand(Mushroom mushroom)
     {
-      //  _navigationService.NavigateTo("PieDetailView", pie);
+      await Shell.Current.GoToAsync($"{nameof(MushroomDetailPage)}?Id={mushroom.Id}");
+      //todo continue , currently infinite loop on loadmushroom
     }
 
     private void OnAddCommand()

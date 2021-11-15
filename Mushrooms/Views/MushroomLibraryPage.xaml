@@ -21,13 +21,13 @@
 
     <ListView HasUnevenRows="True" Grid.Row="2" ItemsSource="{Binding MushroomList}"
               x:Name="PiesListView" CachingStrategy="RecycleElement"  >
-      <!--<ListView.Behaviors>
+      <ListView.Behaviors>
         <behaviors:EventToCommandBehavior 
                     EventName="ItemTapped" 
-                    Command="{Binding PieSelectedCommand}" 
+                    Command="{Binding MushroomSelectedCommand}" 
                     EventArgsConverter="{StaticResource LocalItemTappedConverter}" >
         </behaviors:EventToCommandBehavior>
-      </ListView.Behaviors>-->
+      </ListView.Behaviors>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -36,8 +36,8 @@
                 <RowDefinition Height="*"></RowDefinition>
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="125"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="125"></ColumnDefinition>
                 <ColumnDefinition Width="50"></ColumnDefinition>
               </Grid.ColumnDefinitions>
               <!--<Image Grid.Row="0" HeightRequest="125" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ScientificName}"></Image>-->

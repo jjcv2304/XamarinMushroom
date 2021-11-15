@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Mushrooms.Converters;assembly=Mushrooms"
              x:Class="Mushrooms.App">
   <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
   <Application.Resources>
+    <converters:ItemTappedConverter x:Key="LocalItemTappedConverter"></converters:ItemTappedConverter>
     <ResourceDictionary>
       <Color x:Key="Primary">#900C5F10</Color>
       <Color x:Key="Secondary">#806043 </Color>

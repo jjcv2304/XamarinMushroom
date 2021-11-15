@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Web;
 using Mushrooms.Data;
 using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
 {
   [QueryProperty(nameof(MushroomId), nameof(MushroomId))]
-  public class MushroomDetailVM : BaseViewModel
+  public class MushroomDetailVM : BaseViewModel, IQueryAttributable
   {
     public string MushroomId
     {
@@ -77,6 +79,7 @@ namespace Mushrooms.ViewModels
       {
         MushroomsRepository database = await MushroomsRepository.Instance;
         var mushroom = await database.GetMushroomAsync(int.Parse(mushroomIdentifier));
+        MushroomId = mushroom.Id.ToString();
         //var mushroom = await DataStore.GetAsync(mushroomId);
         //Id = mushroom.Id.ToString();
         //CommonName = mushroom.CommonName;
@@ -94,5 +97,11 @@ namespace Mushrooms.ViewModels
       }
     }
 
+    public void ApplyQueryAttributes(IDictionary<string, string> query)
+    {
+      // The query parameter requires URL decoding.
+      string id = HttpUtility.UrlDecode(query["Id"]);
+     LoadMushroomId(id);
+    }
   }
 }

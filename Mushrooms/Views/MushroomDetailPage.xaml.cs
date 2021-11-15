@@ -3,12 +3,21 @@ using Xamarin.Forms;
 
 namespace Mushrooms.Views
 {
-    public partial class MushroomDetailPage : ContentPage
+  //[QueryProperty(nameof(Id), "Id")]
+  public partial class MushroomDetailPage : ContentPage
+  {
+    //public string Id
+    //{
+    //  set
+    //  {
+    //    LoadAnimal(value);
+    //  }
+    //}
+
+    public MushroomDetailPage()
     {
-        public MushroomDetailPage()
-        {
-            InitializeComponent();
+      InitializeComponent();
       this.BindingContext = ViewModelLocator.MushroomDetailVM;
     }
-    }
+  }
 }
