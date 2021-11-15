@@ -3,7 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mushrooms.Views.MushroomDetailPage"
-             Title="{Binding Title}">
+             Title="Details">
 
   <ScrollView>
     <StackLayout Spacing="20" Padding="15">
