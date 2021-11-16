@@ -8,21 +8,21 @@
   <ScrollView>
     <StackLayout Spacing="20" Padding="15">
       <Label Text="Common Name:" FontSize="Medium" />
-      <Label Text="{Binding CommonName}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.CommonName}" FontSize="Small"/>
       <Label Text="Scientific Name:" FontSize="Medium" />
-      <Label Text="{Binding ScientificName}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.ScientificName}" FontSize="Small"/>
       <Label Text="Cap:" FontSize="Medium" />
-      <Label Text="{Binding Cap}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.Cap}" FontSize="Small"/>
       <Label Text="MarginType:" FontSize="Medium" />
-      <Label Text="{Binding MarginType}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.MarginType}" FontSize="Small"/>
       <Label Text="MarginCurvature:" FontSize="Medium" />
-      <Label Text="{Binding MarginCurvature}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.MarginCurvature}" FontSize="Small"/>
       <Label Text="GillAttachment:" FontSize="Medium" />
-      <Label Text="{Binding GillAttachment}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.GillAttachment}" FontSize="Small"/>
       <Label Text="StemShape:" FontSize="Medium" />
-      <Label Text="{Binding StemShape}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.StemShape}" FontSize="Small"/>
       <Label Text="RingType:" FontSize="Medium" />
-      <Label Text="{Binding RingType}" FontSize="Small"/>
+      <Label Text="{Binding SelectedMushroom.RingType}" FontSize="Small"/>
 
     </StackLayout>
   </ScrollView>

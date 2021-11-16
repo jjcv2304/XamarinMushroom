@@ -45,7 +45,6 @@ namespace Mushrooms.ViewModels
     private async void OnMushroomSelectedCommand(Mushroom mushroom)
     {
       await Shell.Current.GoToAsync($"{nameof(MushroomDetailPage)}?Id={mushroom.Id}");
-      //todo continue , currently infinite loop on loadmushroom
     }
 
     private void OnAddCommand()
