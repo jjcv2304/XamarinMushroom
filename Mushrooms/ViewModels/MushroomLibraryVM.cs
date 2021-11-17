@@ -22,13 +22,13 @@ namespace Mushrooms.ViewModels
       }
     }
     public ICommand MushroomSelectedCommand { get; }
-    public ICommand AddCommand { get; }
+    public ICommand AddMushroomCommand { get; }
 
     public MushroomLibraryVM(MushroomDataService mushroomDataService)
     {
       _mushroomDataService = mushroomDataService;
 
-      AddCommand = new Command(OnAddCommand);
+      AddMushroomCommand = new Command(OnAddMushroomCommand);
       MushroomSelectedCommand = new Command<Mushroom>(OnMushroomSelectedCommand);
 
       MushroomList = new ObservableCollection<Mushroom>();
@@ -47,10 +47,9 @@ namespace Mushrooms.ViewModels
       await Shell.Current.GoToAsync($"{nameof(MushroomDetailPage)}?Id={mushroom.Id}");
     }
 
-    private void OnAddCommand()
+    private async void OnAddMushroomCommand()
     {
-      //App.NavigationService.NavigateTo("PieDetailView");
-      // _navigationService.NavigateTo("PieDetailView");
+      await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}");
     }
     //private void OnPieChanged(PieDetailViewModel sender, Pie pie)
     //{

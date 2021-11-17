@@ -1,107 +1,89 @@
-﻿using Mushrooms.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Web;
+using Mushrooms.Data;
+using Mushrooms.Extensions;
 using Mushrooms.Models;
 using Xamarin.Forms;
 
 namespace Mushrooms.ViewModels
-{
-  public class MushroomEditVM : BaseViewModel
   {
-    private string _commonName;
-    private string _scientificName;
-    private Cap _cap;
-    private MarginType _marginType;
-    private MarginCurvature _marginCurvature;
-    private GillAttachment _gillAttachment;
-    private StemShape _stemShape;
-    private RingType _ringType;
-
-    public MushroomEditVM()
+    public class MushroomEditVM : BaseViewModel, IQueryAttributable
     {
-      SaveCommand = new Command(OnSave, ValidateSave);
-      CancelCommand = new Command(OnCancel);
-      this.PropertyChanged +=
-          (_, __) => SaveCommand.ChangeCanExecute();
-    }
+      public void ApplyQueryAttributes(IDictionary<string, string> query)
+      {
+        string id = "0";
+        if (query.Count > 0)
+        {
+          id = HttpUtility.UrlDecode(query["Id"]);
+        }
+        LoadMushroomId(id);
+      }
 
-    //public string CommonName
-    //{
-    //  get => _commonName;
-    //  set => SetProperty(ref _commonName, value);
-    //}
+      private Mushroom _selectedMushroom = null!;
+      public Mushroom SelectedMushroom
+      {
+        get => _selectedMushroom;
+        set
+        {
+          _selectedMushroom = value;
+          OnPropertyChanged(nameof(SelectedMushroom));
+        }
+      }
+      public MushroomEditVM()
+      {
+        SaveCommand = new Command(OnSave);
+        CancelCommand = new Command(OnCancel);
+        this.PropertyChanged += (_, __) => SaveCommand.ChangeCanExecute();
+      }
 
-    //public string ScientificName
-    //{
-    //  get => _scientificName;
-    //  set => SetProperty(ref _scientificName, value);
-    //}
+      public Command SaveCommand { get; }
+      public Command CancelCommand { get; }
 
-    //public Cap Cap
-    //{
-    //  get => _cap;
-    //  set => SetProperty(ref _cap, value);
-    //}
-    //public List<string> CapList => Enum<Cap>.ToList;
 
-    //public MarginType MarginType
-    //{
-    //  get => _marginType;
-    //  set => SetProperty(ref _marginType, value);
-    //}
-    //public List<string> MarginTypeList => Enum<Cap>.ToList;
+      private async void LoadMushroomId(string mushroomIdentifier)
+      {
+        try
+        {
+          if (mushroomIdentifier == "0")
+          {
+            SelectedMushroom = new Mushroom();
+          }
+          else
+          {
+            MushroomsRepository database = await MushroomsRepository.Instance;
+            SelectedMushroom = await database.GetMushroomAsync(int.Parse(mushroomIdentifier));
+          }
+        }
+        catch (Exception e)
+        {
+          Debug.WriteLine("Failed to Load Mushroom, details: " + e.Message);
+        }
+      }
+      private bool ValidateSave()
+      {
+        return !string.IsNullOrWhiteSpace(SelectedMushroom.CommonName)
+               && !string.IsNullOrWhiteSpace(SelectedMushroom.ScientificName);
+      }
+      private async void OnCancel()
+      {
+        await Shell.Current.GoToAsync("..");
+      }
+      private async void OnSave()
+      {
+        if (!ValidateSave()) return;
+        MushroomsRepository database = await MushroomsRepository.Instance;
+        await database.SaveAsync(SelectedMushroom);
 
-    //public MarginCurvature MarginCurvature
-    //{
-    //  get => _marginCurvature;
-    //  set => SetProperty(ref _marginCurvature, value);
-    //}
-    //public List<string> MarginCurvatureList => Enum<MarginCurvature>.ToList;
+        await Shell.Current.GoToAsync("..");
+      }
+      public List<string> CapList => Enum<Cap>.ToList;
+      public List<string> MarginTypeList => Enum<MarginType>.ToList;
+      public List<string> MarginCurvatureList => Enum<MarginCurvature>.ToList;
+      public List<string> GillAttachmentList => Enum<GillAttachment>.ToList;
+      public List<string> StemShapeList => Enum<StemShape>.ToList;
+      public List<string> RingTypeList => Enum<RingType>.ToList;
 
-    //public GillAttachment GillAttachment
-    //{
-    //  get => _gillAttachment;
-    //  set => SetProperty(ref _gillAttachment, value);
-    //}
-    //public List<string> GillAttachmentList => Enum<GillAttachment>.ToList;
-
-    //public StemShape StemShape
-    //{
-    //  get => _stemShape;
-    //  set => SetProperty(ref _stemShape, value);
-    //}
-    //public List<string> StemShapeList => Enum<StemShape>.ToList;
-
-    //public RingType RingType
-    //{
-    //  get => _ringType;
-    //  set => SetProperty(ref _ringType, value);
-    //}
-    //public List<string> RingTypeList => Enum<RingType>.ToList;
-
-    private bool ValidateSave()
-    {
-      return !string.IsNullOrWhiteSpace(_commonName)
-             && !string.IsNullOrWhiteSpace(_scientificName);
-    }
-    public Command SaveCommand { get; }
-    public Command CancelCommand { get; }
-    private async void OnCancel()
-    {
-      // This will pop the current page off the navigation stack
-      await Shell.Current.GoToAsync("..");
-    }
-    private async void OnSave()
-    {
-      MushroomsRepository database = await MushroomsRepository.Instance;
-      Mushroom newMushroom = new Mushroom(0, _commonName, _scientificName, _cap, _marginType,
-                _marginCurvature, _gillAttachment, _stemShape, _ringType
-            );
-
-     // var t = Cap;
-
-      await database.SaveAsync(newMushroom);
-
-      // This will pop the current page off the navigation stack
-      await Shell.Current.GoToAsync("..");
-    }
   }
-}
+  }

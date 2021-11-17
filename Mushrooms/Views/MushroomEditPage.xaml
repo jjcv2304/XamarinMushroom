@@ -15,26 +15,24 @@
   </ContentPage.Resources>
   <ContentPage.Content>
 
-
-
     <ScrollView>
       <StackLayout Spacing="3" Padding="15">
         <Label Text="Common Name" FontSize="Medium" />
-        <Entry Text="{Binding CommonName, Mode=TwoWay}" FontSize="Medium" />
+        <Entry Text="{Binding SelectedMushroom.CommonName, Mode=TwoWay}" FontSize="Medium" />
         <Label Text="ScientificName" FontSize="Medium" />
-        <Editor Text="{Binding ScientificName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+        <Editor Text="{Binding SelectedMushroom.ScientificName, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
         <Label Text="Cap" FontSize="Medium" />
-        <Picker ItemsSource="{Binding CapList}" SelectedIndex="{Binding Cap, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding CapList, Mode=TwoWay}" SelectedIndex="{Binding SelectedMushroom.Cap, Converter={StaticResource IntEnum}}"/>
         <Label Text="MarginType" FontSize="Medium" />
-        <Picker ItemsSource="{Binding MarginTypeList}" SelectedIndex="{Binding MarginType, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding MarginTypeList}" SelectedIndex="{Binding SelectedMushroom.MarginType, Converter={StaticResource IntEnum}}"/>
         <Label Text="MarginCurvature" FontSize="Medium" />
-        <Picker ItemsSource="{Binding MarginCurvatureList}" SelectedIndex="{Binding MarginCurvature, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding MarginCurvatureList}" SelectedIndex="{Binding SelectedMushroom.MarginCurvature, Converter={StaticResource IntEnum}}"/>
         <Label Text="GillAttachment" FontSize="Medium" />
-        <Picker ItemsSource="{Binding GillAttachmentList}" SelectedIndex="{Binding GillAttachment, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding GillAttachmentList}" SelectedIndex="{Binding SelectedMushroom.GillAttachment, Converter={StaticResource IntEnum}}"/>
         <Label Text="StemShape" FontSize="Medium" />
-        <Picker ItemsSource="{Binding StemShapeList}" SelectedIndex="{Binding StemShape, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding StemShapeList}" SelectedIndex="{Binding SelectedMushroom.StemShape, Converter={StaticResource IntEnum}}"/>
         <Label Text="RingType" FontSize="Medium" />
-        <Picker ItemsSource="{Binding RingTypeList}" SelectedIndex="{Binding RingType, Converter={StaticResource IntEnum}}"/>
+        <Picker ItemsSource="{Binding RingTypeList}" SelectedIndex="{Binding SelectedMushroom.RingType, Converter={StaticResource IntEnum}}"/>
         <StackLayout Orientation="Horizontal">
           <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
           <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>

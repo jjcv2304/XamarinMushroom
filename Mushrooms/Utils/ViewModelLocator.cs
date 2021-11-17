@@ -5,8 +5,6 @@ namespace Mushrooms.Utils
   public static class ViewModelLocator
   {
 
-    //public static PieDetailViewModel PieDetailViewModel { get; set; } = new PieDetailViewModel(App.PieDataServie, App.NavigationService);
-
     internal static AboutVM AboutVM { get; set; } = new AboutVM();
     internal static ExportDataVM ExportDataVM { get; set; } = new ExportDataVM(App.MushroomDataService);
 
@@ -20,6 +18,6 @@ namespace Mushrooms.Utils
 
     internal static MushroomLibraryVM MushroomLibraryVM { get; set; } = new MushroomLibraryVM(App.MushroomDataService);
     
-    internal static MushroomEditVM NewMushroomVM { get; set; } = new MushroomEditVM();
+    internal static MushroomEditVM MushroomEditVM { get; set; } = new MushroomEditVM();
   }
 }

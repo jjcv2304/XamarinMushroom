@@ -9,7 +9,7 @@ namespace Mushrooms.Views
     public MushroomEditPage()
     {
       InitializeComponent();
-      this.BindingContext = ViewModelLocator.NewMushroomVM; ;
+      this.BindingContext = ViewModelLocator.MushroomEditVM; ;
     }
   }
 }
