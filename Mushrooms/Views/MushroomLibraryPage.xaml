@@ -28,10 +28,10 @@
                     EventArgsConverter="{StaticResource LocalItemTappedConverter}" >
         </behaviors:EventToCommandBehavior>
       </ListView.Behaviors>
-      <ListView.ItemTemplate>
+      <ListView.ItemTemplate >
         <DataTemplate>
           <ViewCell>
-            <Grid HeightRequest="75"  Margin="5" RowSpacing="2" x:Name="MushroomItem">
+            <Grid HeightRequest="75"  Margin="5" RowSpacing="2" x:Name="MushroomItem" >
               <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -42,10 +42,11 @@
                 <ColumnDefinition Width="50"></ColumnDefinition>
                 <ColumnDefinition Width="50"></ColumnDefinition>
               </Grid.ColumnDefinitions>
+<!--TODO add image and move common name and scientific name on same column different row-->
               <!--<Image Grid.Row="0" HeightRequest="125" VerticalOptions="Start" Margin="2,2,1,2" Source="{Binding ScientificName}"></Image>-->
-              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"  Text="{Binding ScientificName}" TextColor="{StaticResource Primary}"></Label>
-              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Text="{Binding CommonName}" TextColor="{StaticResource Primary}"></Label>
-              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"  Text="{Binding Id}" TextColor="{StaticResource Primary}"></Label>
+              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"  Text="{Binding ScientificName}" Style="{StaticResource MediumCenterBoldPrimaryFont}"></Label>
+              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"  Text="{Binding CommonName}"></Label>
+              <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"  Text="{Binding Id}"></Label>
               
               <Button Grid.Row="0" Grid.Column="3" Text="{x:Static fontawesome:FontAwesomeIcons.TrashAlt}" FontFamily="{StaticResource FontAwesomeRegular}" 
                       BindingContext="{Binding Source={x:Reference PiesListView}, Path=BindingContext}"  

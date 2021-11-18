@@ -11,8 +11,9 @@ namespace Mushrooms.ViewModels
 {
   internal class MushroomLibraryVM : BaseViewModel
   {
-    private IMushroomDataService _mushroomDataService;
+    private readonly IMushroomDataService _mushroomDataService;
     private ObservableCollection<Mushroom> _mushroomList;
+    
     public ObservableCollection<Mushroom> MushroomList
     {
       get => _mushroomList;
@@ -22,10 +23,6 @@ namespace Mushrooms.ViewModels
         OnPropertyChanged("MushroomList");
       }
     }
-    public ICommand MushroomSelectedCommand { get; }
-    public ICommand AddMushroomCommand { get; }
-    public ICommand DeleteMushroomCommand { get; }
-    public ICommand UpdateMushroomCommand { get; }
 
     public MushroomLibraryVM(IMushroomDataService mushroomDataService)
     {
@@ -36,7 +33,7 @@ namespace Mushrooms.ViewModels
       UpdateMushroomCommand = new Command<Mushroom>(OnUpdateMushroomCommand);
       MushroomSelectedCommand = new Command<Mushroom>(OnMushroomSelectedCommand);
 
-      MushroomList = new ObservableCollection<Mushroom>();
+      _mushroomList = new ObservableCollection<Mushroom>();
     }
 
     public async Task OnAppearing()
@@ -46,17 +43,19 @@ namespace Mushrooms.ViewModels
       MushroomList = new ObservableCollection<Mushroom>(await _mushroomDataService.GetAsync());
     }
 
-
+    public ICommand MushroomSelectedCommand { get; }
     private async void OnMushroomSelectedCommand(Mushroom mushroom)
     {
       await Shell.Current.GoToAsync($"{nameof(MushroomDetailPage)}?Id={mushroom.Id}");
     }
 
+    public ICommand AddMushroomCommand { get; }
     private async void OnAddMushroomCommand()
     {
       await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}");
     }
 
+    public ICommand DeleteMushroomCommand { get; }
     private async void OnDeleteMushroomCommand(Mushroom mushroom)
     {
       //todo add confirmation dialog
@@ -64,6 +63,8 @@ namespace Mushrooms.ViewModels
 
       // await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}");
     }
+    
+    public ICommand UpdateMushroomCommand { get; }
     private async void OnUpdateMushroomCommand(Mushroom mushroom)
     {
       await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}?Id={mushroom.Id}");
