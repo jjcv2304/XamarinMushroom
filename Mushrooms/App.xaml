@@ -11,6 +11,13 @@
     <ResourceDictionary>
       <Color x:Key="Primary">#900C5F10</Color>
       <Color x:Key="Secondary">#806043 </Color>
+
+      <Style x:Key="MediumCenterBoldPrimaryFont" TargetType="Label">
+        <Setter Property="TextColor" Value="#900A4C0C"></Setter>
+        <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+        <Setter Property="FontAttributes" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="Medium" ></Setter>
+      </Style>
      
       <!--<Style TargetType="Button">
         <Setter Property="TextColor" Value="#900A4C0C"></Setter>
