@@ -20,9 +20,11 @@ namespace Mushrooms.Services
       throw new NotImplementedException();
     }
 
-    public Task<bool> DeleteAsync(string id)
+    public async Task<bool> DeleteAsync(Mushroom mushroom)
     {
-      throw new NotImplementedException();
+      MushroomsRepository database = await MushroomsRepository.Instance;
+      var result = await database.DeleteItemAsync(mushroom);
+      return true;//todo improve
     }
 
     public async Task<Mushroom> GetAsync(string id)

@@ -52,5 +52,9 @@ namespace Mushrooms.Data
     {
       return _database.DeleteAsync(mushroom);
     }
+    //public Task<int> DeleteItemAsync(int  mushroomId)
+    //{
+    //  return _database.DeleteAsync(mushroomId);
+    //}
   }
 }
