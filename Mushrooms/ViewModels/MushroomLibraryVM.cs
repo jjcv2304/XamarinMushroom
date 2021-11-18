@@ -66,9 +66,7 @@ namespace Mushrooms.ViewModels
     }
     private async void OnUpdateMushroomCommand(Mushroom mushroom)
     {
-      //await _mushroomDataService.UpdateAsync(mushroom.Id.ToString());
-
-      // await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}");
+      await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}?Id={mushroom.Id}");
     }
 
     //private void OnPieChanged(PieDetailViewModel sender, Pie pie)
