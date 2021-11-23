@@ -12,8 +12,9 @@ namespace Mushrooms.ViewModels
   internal class MushroomLibraryVM : BaseViewModel
   {
     private readonly IMushroomDataService _mushroomDataService;
+    private readonly IMessageBoxService _messageBoxService;
     private ObservableCollection<Mushroom> _mushroomList;
-    
+
     public ObservableCollection<Mushroom> MushroomList
     {
       get => _mushroomList;
@@ -24,9 +25,10 @@ namespace Mushrooms.ViewModels
       }
     }
 
-    public MushroomLibraryVM(IMushroomDataService mushroomDataService)
+    public MushroomLibraryVM(IMushroomDataService mushroomDataService, IMessageBoxService messageBoxService)
     {
       _mushroomDataService = mushroomDataService;
+      _messageBoxService = messageBoxService;
 
       AddMushroomCommand = new Command(OnAddMushroomCommand);
       DeleteMushroomCommand = new Command<Mushroom>(OnDeleteMushroomCommand);
@@ -58,12 +60,19 @@ namespace Mushrooms.ViewModels
     public ICommand DeleteMushroomCommand { get; }
     private async void OnDeleteMushroomCommand(Mushroom mushroom)
     {
-      //todo add confirmation dialog
-      await _mushroomDataService.DeleteAsync(mushroom);
-
-      // await Shell.Current.GoToAsync($"{nameof(MushroomEditPage)}");
+      var MenuTitleDeleteProductTxt = "Deleting Mushroom from Library";
+      var ButtonCancelTxt = "Cancel";
+      var ButtonDeleteTxt = "Delete";
+      var action = await _messageBoxService.ShowActionSheet(MenuTitleDeleteProductTxt, ButtonCancelTxt, ButtonDeleteTxt);
+      if (action == ButtonDeleteTxt)
+      {
+        await _mushroomDataService.DeleteAsync(mushroom);
+        MushroomList.Remove(mushroom);
+      }
     }
-    
+
+
+
     public ICommand UpdateMushroomCommand { get; }
     private async void OnUpdateMushroomCommand(Mushroom mushroom)
     {

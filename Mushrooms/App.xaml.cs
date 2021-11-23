@@ -7,6 +7,7 @@ namespace Mushrooms
   {
 
     public static MushroomDataService MushroomDataService { get; } = new MushroomDataService();
+    public static MessageBoxService MessageBoxService { get; } = new MessageBoxService();
 
     public App()
     {

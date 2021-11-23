@@ -1,10 +1,7 @@
 ﻿# MUSHROOMS
 
 ## ROUTE MAP
-  - Check tutorial about vmmv
-  - Delete mushroom
-  - Edit mushroom: color, cap, stem, etc
-  - Unit Tests
+    - Unit Tests
   - Find mushroom: simple view, all characteristics as dropdowns with a default all values option
   - Advance Picker with name-image -> maybe evolve enum to class 
   - Export structure:
